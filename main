@@ -1,0 +1,40 @@
+package burlas; 
+
+    public class main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        MediaPlayer player;
+        String playerType;
+
+        System.out.println("--- Device Setup ---");
+        System.out.println("Choose the player type to load into the Device:");
+        System.out.println("1. AudioOnlyPlayer (Audio only)");
+        System.out.println("2. AudioVideoPlayer (Audio and Video)");
+        System.out.print("Enter choice (1 or 2): ");
+
+        int choice;
+        if (scanner.hasNextInt()) {
+            choice = scanner.nextInt();
+        } else {
+            choice = 1;
+        }
+        
+        System.out.println();
+
+        if (choice == 2) {
+            player = new AudioVideoPlayer();
+            playerType = "AudioVideoPlayer";
+        } else {
+            player = new AudioOnlyPlayer();
+            playerType = "AudioOnlyPlayer";
+        }
+
+        System.out.println("Action: Testing Device loaded with " + playerType + ".");
+        System.out.println("Output:");
+        
+        userDevice.playAudio();
+        userDevice.playVideo();
+
+        scanner.close();
+    }
+}
