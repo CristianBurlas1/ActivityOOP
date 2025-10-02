@@ -1,5 +1,4 @@
 package burlas;
-public class PolymorphismCompactDemo {
 
     class Device {
 
